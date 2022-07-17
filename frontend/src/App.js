@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
 import Cart from "./components/Cart";
+import Checkout from "./components/checkout"
 
 import "react-toastify/dist/ReactToastify.css";
 import Register from "./components/auth/Register";
@@ -30,10 +31,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout-success" element={<Checkout/>} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/not-found" element={<NotFound />} />
-            <Route to="/not-found" />
+            <Route path="*" element={<NotFound />} />
+            
           </Routes>
         </div>
       </BrowserRouter>

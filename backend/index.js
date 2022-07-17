@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const register = require("./routes/register");
 const login = require("./routes/login");
+const stripe=require("./routes/stripe")
 const DB=require("./connect/DB")
 DB()
 
@@ -17,6 +18,7 @@ app.use(cors());
 
 app.use("/api/register", register);
 app.use("/api/login", login);
+app.use("/api/stripe", stripe);
 
 app.get("/", (req, res) => {
    res.send("Welcome our to online shop API...");

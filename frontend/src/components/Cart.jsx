@@ -10,6 +10,7 @@ import {
 } from "../slices/cartSlice";
 
 import { Link } from "react-router-dom";
+import { PaymentButton } from "./PaymentButton";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -106,7 +107,7 @@ const Cart = () => {
               </div>
               <p>Taxes and shipping calculated at checkout</p>
               {auth._id ? (
-                <button>Check out</button>
+                <PaymentButton cartItems={cart.cartItems}/>
               ) : (
                 <button
                   className="cart-login"
